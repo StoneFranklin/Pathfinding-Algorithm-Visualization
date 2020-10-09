@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pathfinding_Algorithm_Visualization.iml" filepath="$PROJECT_DIR$/.idea/modules/Pathfinding_Algorithm_Visualization.iml" group="Pathfinding_Algorithm_Visualization" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Pathfinding Algorithm Visualization/app" />
+    </modules>
+  </component>
+</project>
