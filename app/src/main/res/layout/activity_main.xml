@@ -1,18 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:paddingBottom="0sp"
+    android:paddingLeft="0sp"
+    android:paddingRight="0sp"
+    android:paddingTop="0sp"
+    tools:context="com.example.pathfindingalgorithmvisualization.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.example.pathfindingalgorithmvisualization.GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/grid"
+        android:layout_above="@+id/bottomBar">
+    </com.example.pathfindingalgorithmvisualization.GridView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        style="?attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0sp">
+
+        <Button
+            android:id="@+id/start"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0sp"
+            android:layout_marginBottom="0sp"
+            android:layout_weight="1"
+            android:text="@string/start" />
+
+        <Button
+            android:id="@+id/end"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0sp"
+            android:layout_marginBottom="0sp"
+            android:layout_weight="1"
+            android:text="@string/end" />
+
+        <Button
+            android:id="@+id/dijkstra"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0sp"
+            android:layout_marginBottom="0sp"
+            android:layout_weight="1"
+            android:text="@string/start_algorithm" />
+
+        <Button
+            android:id="@+id/clear"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0sp"
+            android:layout_marginBottom="0sp"
+            android:layout_weight="1"
+            android:text="@string/clear" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>
