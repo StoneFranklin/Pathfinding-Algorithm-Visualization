@@ -8,6 +8,9 @@ import android.widget.Button;
 
 public class MainActivity extends Activity {
     GridView grid;
+    int algoClicked = 0;
+    int startClicked = 0;
+    int endClicked = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +26,10 @@ public class MainActivity extends Activity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 grid.stopClicked=0;
                 grid.startClicked=1;
+                startClicked = 1;
             }
         });
         end.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +37,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 grid.startClicked=0;
                 grid.stopClicked=1;
+                endClicked = 1;
             }
         });
         clear.setOnClickListener(new View.OnClickListener() {
@@ -43,13 +49,19 @@ public class MainActivity extends Activity {
                         grid.grid[r][c] = 0; //clear out all nodes
                     }
                 }
+                algoClicked = 0;
+                startClicked = 0;
+                endClicked = 0;
                 grid.invalidate();
             }
         });
         dijkstra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                grid.Dijkstra();
+                if(algoClicked == 0 && startClicked == 1 && endClicked == 1) {
+                    grid.Dijkstra();
+                    algoClicked = 1;
+                }
             }
         });
     }

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="0sp"
     android:paddingLeft="0sp"
-    android:paddingRight="0sp"
     android:paddingTop="0sp"
+    android:paddingRight="0sp"
+    android:paddingBottom="0sp"
     tools:context="com.example.pathfindingalgorithmvisualization.MainActivity">
 
     <com.example.pathfindingalgorithmvisualization.GridView
+        android:id="@+id/grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/grid"
-        android:layout_above="@+id/bottomBar">
-    </com.example.pathfindingalgorithmvisualization.GridView>
+        android:layout_above="@+id/bottomBar"
+        android:background="@color/colorPrimaryDark"></com.example.pathfindingalgorithmvisualization.GridView>
 
     <LinearLayout
         android:id="@+id/bottomBar"
@@ -23,6 +24,8 @@
         android:layout_height="40sp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/textlines"
+        android:backgroundTint="@color/colorPrimaryDark"
         android:gravity="bottom"
         android:orientation="horizontal"
         android:paddingLeft="0dp"
@@ -31,43 +34,50 @@
 
         <Button
             android:id="@+id/start"
-            style="?attr/buttonBarButtonStyle"
+
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
-            android:text="@string/start" />
+            android:text="@string/start"
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/end"
-            style="?attr/buttonBarButtonStyle"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
-            android:text="@string/end" />
+            android:text="@string/end"
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/dijkstra"
-            style="?attr/buttonBarButtonStyle"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
-            android:text="@string/start_algorithm" />
+            android:foregroundGravity="center"
+            android:text="@string/start_algorithm"
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/clear"
-            style="?attr/buttonBarButtonStyle"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
-            android:text="@string/clear" />
+            android:foregroundGravity="center"
+            android:text="@string/clear"
+            android:textColor="@color/colorAccent" />
 
     </LinearLayout>
 

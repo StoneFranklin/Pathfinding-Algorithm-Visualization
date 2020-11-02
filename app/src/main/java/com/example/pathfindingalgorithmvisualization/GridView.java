@@ -13,8 +13,8 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 public class GridView extends View {
-    int rows = 16;
-    int cols = 10;
+    int rows = 32;
+    int cols = 20;
     float tileWidth;
     float tileHeight;
     float width;
