@@ -29,8 +29,6 @@ public class GridView extends View {
     int stop_x, stop_y;
     final int milliseconds = 1;
 
-
-
     Graph graph;
     Paint paint = new Paint();
     performAlgorithm thread = new performAlgorithm();
