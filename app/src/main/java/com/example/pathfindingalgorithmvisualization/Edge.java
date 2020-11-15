@@ -1,5 +1,5 @@
 package com.example.pathfindingalgorithmvisualization;
-
+//Connection between two vertexes.
 public class Edge {
     public Vertex source;
     public Vertex destination;

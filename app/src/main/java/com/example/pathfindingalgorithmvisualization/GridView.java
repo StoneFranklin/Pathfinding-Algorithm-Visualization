@@ -1,6 +1,8 @@
 package com.example.pathfindingalgorithmvisualization;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,6 +10,7 @@ import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.LinkedList;
 import java.util.PriorityQueue;
@@ -25,6 +28,8 @@ public class GridView extends View {
     int stopClicked = 0;
     int stop_x, stop_y;
     final int milliseconds = 1;
+
+
 
     Graph graph;
     Paint paint = new Paint();
@@ -51,6 +56,7 @@ public class GridView extends View {
     }
 
     public void onDraw(Canvas canvas) { //Draws the grid
+
         super.onDraw(canvas);
         tileWidth = width / cols;
         tileHeight = height / rows;
@@ -136,7 +142,7 @@ public class GridView extends View {
             int c = (int) (x / tileWidth);
             int r = (int) (y / tileHeight);
             if (x > width || y > height || x < 0 || y < 0)
-                return false;//pusho se degjuari ACTION_MOVE nqs dole jashte kufijve te view.
+                return false;
             if (grid[r][c] != 1 && grid[r][c] != 2)
                 if (grid[r][c] != 3)
                     grid[r][c] = 3;
@@ -146,6 +152,7 @@ public class GridView extends View {
     }
 
     public void Dijkstra() { //Executes the algorithm
+
         getGraph();
         thread = new performAlgorithm();
         thread.execute();
@@ -208,6 +215,31 @@ public class GridView extends View {
         graph = g;
         invalidate(); //Forces a redraw
     }
+    public void alertDialogShow(Context context, String message)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setMessage(message);
+        alertDialog.setButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                alertDialog.dismiss();
+            }
+        });
+        alertDialog.show();
+
+        Button bq = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        bq.setBackgroundColor(Color.BLACK);
+    }
+
+    public void clear() {
+        for(int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                grid[r][c] = 0; //clear out all nodes
+            }
+        }
+        invalidate();
+    }
 
     public class performAlgorithm extends AsyncTask<Void, Void, Void> { //Actual algorithm
         protected Void doInBackground(Void... params) {
@@ -218,11 +250,12 @@ public class GridView extends View {
             queue.add(start);
             start.d_value = 0;
 
+
             //cycle until queue is empty or destination has been inserted into the set
             while (!queue.isEmpty()) {
                 if (isCancelled()) break;
                 Vertex current = queue.poll();
-                current.discovered = true;//kur eshte ne set dhe tashme d_value eshte percaktuar
+                current.discovered = true;
                 set.add(current);
                 if (grid[(int) current.y][(int) current.x] != 1 && grid[(int) current.y][(int) current.x] != 2)
                     grid[(int) current.y][(int) current.x] = 4;
@@ -259,7 +292,9 @@ public class GridView extends View {
                     }
                 }
             }
+
             Vertex current = destination;
+
             //Retrace steps starting with destination until you get to the starting vertex.
             while (current != null) {
                 if (isCancelled()) break;
@@ -272,9 +307,12 @@ public class GridView extends View {
                     e.printStackTrace();
                 }
                 current = current.parent;
+
             }
+
             return null;
         }
+
 
         protected void onProgressUpdate(Void...args) { //Run by using method publishProgress()
             invalidate();

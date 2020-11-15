@@ -1,10 +1,16 @@
 package com.example.pathfindingalgorithmvisualization;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.app.Activity;
+import android.content.Context;
 
 public class MainActivity extends Activity {
     GridView grid;
@@ -26,7 +32,6 @@ public class MainActivity extends Activity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 grid.stopClicked=0;
                 grid.startClicked=1;
                 startClicked = 1;
@@ -62,10 +67,35 @@ public class MainActivity extends Activity {
                     grid.Dijkstra();
                     algoClicked = 1;
                 }
+                else if(algoClicked == 0 && startClicked == 0 && endClicked == 0) {
+                    alertDialogShow(MainActivity.this, "Please select a start and end point.");
+                }
+                else if(algoClicked == 0 && startClicked == 0 && endClicked == 1) {
+                    alertDialogShow(MainActivity.this, "Please select a start point.");
+                }
+                else if(algoClicked == 0 && startClicked == 1 && endClicked == 0) {
+                    alertDialogShow(MainActivity.this, "Please select an end point.");
+                }
             }
         });
     }
 
+    public static void alertDialogShow(Context context, String message)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setMessage(message);
+        alertDialog.setButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int which)
+            {
+                alertDialog.dismiss();
+            }
+        });
+        alertDialog.show();
+
+        Button bq = alertDialog.getButton(DialogInterface.BUTTON_POSITIVE);
+        bq.setBackgroundColor(Color.BLACK);
+    }
     @Override
     protected void onStop() {
         if(grid.thread.getStatus()== AsyncTask.Status.RUNNING)

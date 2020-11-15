@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pathfinding_Algorithm_Visualization.iml" filepath="$PROJECT_DIR$/.idea/modules/Pathfinding_Algorithm_Visualization.iml" group="Pathfinding_Algorithm_Visualization" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Pathfinding Algorithm Visualization/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Pathfinding_Algorithm_Visualization.iml" filepath="$PROJECT_DIR$/.idea/modules/Pathfinding_Algorithm_Visualization.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Pathfinding_Algorithm_Visualization.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Pathfinding_Algorithm_Visualization.app.iml" />
     </modules>
   </component>
 </project>
