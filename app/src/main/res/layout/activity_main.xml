@@ -35,7 +35,7 @@
         <Button
             android:id="@+id/start"
 
-            style="@style/Widget.AppCompat.ActionButton"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
@@ -47,7 +47,7 @@
 
         <Button
             android:id="@+id/end"
-            style="@style/Widget.AppCompat.ActionButton"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
@@ -59,7 +59,7 @@
 
         <Button
             android:id="@+id/dijkstra"
-            style="@style/Widget.AppCompat.ActionButton"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
@@ -72,7 +72,7 @@
 
         <Button
             android:id="@+id/clear"
-            style="@style/Widget.AppCompat.ActionButton"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"

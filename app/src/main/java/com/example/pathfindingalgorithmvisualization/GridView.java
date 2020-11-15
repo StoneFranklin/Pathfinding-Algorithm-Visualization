@@ -74,24 +74,24 @@ public class GridView extends View {
                         paint.setColor(Color.BLACK);
                         break;
                     case 1: //start
-                        paint.setColor(Color.RED);
+                        paint.setColor(Color.parseColor("#245bff"));
                         break;
                     case 2: //end
-                        paint.setColor(Color.GREEN);
+                        paint.setColor(Color.parseColor("#cc0006"));
                         break;
                     case 3: //wall
                         paint.setColor(Color.BLACK);
                         break;
                     case 4: //in set
-                        paint.setColor(Color.CYAN);
+                        paint.setColor(Color.parseColor("#00D9C0"));
                         border = 1;
                         break;
                     case 5: //in queue
-                        paint.setColor(Color.LTGRAY);
+                        paint.setColor(Color.parseColor("#FF4365"));
                         border = 1;
                         break;
                     case 6: //in shortest path
-                        paint.setColor(Color.YELLOW);
+                        paint.setColor(Color.parseColor("#16a82c"));
                         border = 1;
                         break;
                 }
