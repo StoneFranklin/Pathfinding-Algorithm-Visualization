@@ -35,46 +35,50 @@
         <Button
             android:id="@+id/start"
 
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:text="@string/start"
             android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/end"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:text="@string/end"
             android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/dijkstra"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:foregroundGravity="center"
             android:text="@string/start_algorithm"
             android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/clear"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.AppCompat.ActionButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="0sp"
             android:layout_marginBottom="0sp"
             android:layout_weight="1"
+            android:background="@drawable/button_border"
             android:foregroundGravity="center"
             android:text="@string/clear"
             android:textColor="@color/colorAccent" />
