@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.example.pathfindingalgorithmvisualization"
+        applicationId 'com.stonefranklin.pathfindingalgorithmvisualization'
         minSdkVersion 23
         targetSdkVersion 29
         versionCode 1
